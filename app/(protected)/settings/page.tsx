@@ -7,21 +7,19 @@ export default async function SettingsPage() {
     const session = await auth();
 
 
-    const handelClick =  () => {
-      signOut();
-    }
+  
   return (
     <div>
         <h1>thiss is the settings page!</h1>
 
-       "the sesion is: " {JSON.stringify(session)}
+       {JSON.stringify(session)}
 
 
        <form action={async () => {
-        "use server";
+        "use server"
         await signOut();
        }}>
-        <button type="submit">Log Out</button>
+        <Button type="submit">Log Out</Button>
        </form>
     </div>
   )

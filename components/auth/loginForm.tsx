@@ -12,7 +12,6 @@ import { useToast } from '@chakra-ui/react'
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -24,7 +23,6 @@ import { LoginSckemas } from '@/schemas'
 import { CardWrapper } from '@/components/auth/cardWrapper'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { register } from "@/actions/register";
 import { login } from "@/actions/login";
 import { FormError } from "../error/form-error";
 import { FormSucces } from "../error/form-succes";
