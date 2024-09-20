@@ -34,7 +34,7 @@ export const CardWrapper = ({
     backButtonHref
 }: CardWrapperProps) => {
     return (
-        <Card className="w-[400px] shadow-md rounded-xl">
+        <Card className="w-[500px] h-auto  shadow-md rounded-xl py-6">
             <CardHeader>
                 <HeaderCard label={headerLabel} subTtitle={subHeaderLabel} />
             </CardHeader>

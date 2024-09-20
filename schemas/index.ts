@@ -24,3 +24,9 @@ export const LoginSckemas = z.object({
         message: "password required!"
     })
 })
+
+
+export const userInfoSkemas = z.object({
+    name: z.optional(z.string()),
+    image: z.optional(z.string())
+})

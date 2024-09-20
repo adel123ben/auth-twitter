@@ -9,6 +9,9 @@ import { useForm } from "react-hook-form"
 // import toats from chakraui (to toggle the erro or the succes)
 import { useToast } from '@chakra-ui/react'
 
+// import useSearcheParams to read the (URL)
+import { useSearchParams } from "next/navigation";
+
 import {
     Form,
     FormControl,
@@ -29,6 +32,10 @@ import { FormSucces } from "../error/form-succes";
 import { Spiner } from "../spiner/spiner";
 
 export const LoginForm = () => {
+  // defind the params hear
+  const params = useSearchParams();
+  // find the error in the url
+  const UrlError = params.get('error') === "OAuthAccountNotLinked" ? "Email link withe other account" : "";
   const [error, setError] = useState<string | undefined>("");
   const [success, setSucces] = useState<string | undefined>("");
   // defind the toast hear
@@ -110,7 +117,7 @@ export const LoginForm = () => {
 
             </div>
 
-            <FormError message={error} />
+            <FormError message={error || UrlError} />
             <FormSucces message={success} />
         <Button disabled={isPanding} type="submit" className="w-full" size="lg" variant="default">
             {isPanding ? <Spiner /> : "Login"}

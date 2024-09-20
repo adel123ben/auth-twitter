@@ -54,8 +54,8 @@ export const RegisterForm = () => {
       startTransition(() => {
           register(values)
           .then((data) => {
-            if(data.error) {
-              setError(data.error);
+            if(data?.error) {
+              setError(data?.error);
               toast({
                 title: 'there is some error',
                 status: 'error',
@@ -64,8 +64,8 @@ export const RegisterForm = () => {
                 isClosable: true,
               })
             }
-            if (data.success) {
-              setSucces(data.success)
+            if (data?.success) {
+              setSucces(data?.success)
               toast({
                 title: 'Account created.',
                 status: 'success',
@@ -81,7 +81,7 @@ export const RegisterForm = () => {
   return (
     <CardWrapper headerLabel="Create an account" subHeaderLabel="Welcome to application" showsical={true} backButtonLabel="Already have an account?" backButtonHref="/auth/login">
         <Form {...form}>
-            <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
+            <form className="space-y-6 pt-4" onSubmit={form.handleSubmit(onSubmit)}>
             <div className="space-y-4">
             <FormField
           control={form.control}
